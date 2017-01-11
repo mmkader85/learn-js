@@ -1,16 +1,15 @@
 var fnCount = 0;
 var insertInBody = function (text) {
-    fnCount++;
-    var element = document.createElement('div');
-    element.innerHTML = fnCount + '. ' + text;
+  var element = document.createElement('div');
+  element.innerHTML = ++fnCount + ') ' + text;
 
-    var body = document.getElementById('body');
-    body.appendChild(element);
+  var body = document.getElementById('body');
+  body.appendChild(element);
 };
 
 var gaDimensions = {
-    name: 'dimension10',
-    value: 'Muhammed'
+  name: 'dimension10',
+  value: 'Muhammed'
 };
 
 insertInBody(JSON.stringify(gaDimensions));
@@ -19,15 +18,15 @@ insertInBody(JSON.stringify(gaDimensions));
 delete gaDimensions.value;
 insertInBody(JSON.stringify(gaDimensions));
 
-var Person = function(name, age) {
-    this.name = name;
-    this.age = age;
-    this.getYearOfBirth = function() {
-        return new Date().getFullYear() - this.age;
-    };
-    this.getNameAndYearOfBirth = function() {
-        return 'Year of birth of ' + this.name + ' is ' + this.getYearOfBirth();
-    }
+var Person = function (name, age) {
+  this.name = name;
+  this.age = age;
+  this.getYearOfBirth = function () {
+    return new Date().getFullYear() - this.age;
+  };
+  this.getNameAndYearOfBirth = function () {
+    return 'Year of birth of ' + this.name + ' is ' + this.getYearOfBirth();
+  }
 };
 
 var user1 = new Person('Muhammad', 31);
